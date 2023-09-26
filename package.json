@@ -1,0 +1,17 @@
+{
+  "name": "starknet-dmail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^6.7.1",
+    "random-word-slugs": "^0.1.7",
+    "starknet": "^5.19.5"
+  }
+}
