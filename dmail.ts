@@ -2,6 +2,7 @@ import { Provider, Account, CallData, shortString } from "starknet";
 import { generateSlug } from "random-word-slugs";
 
 import { getArgentAddressNew, sleep, timeout, getRandomDomain } from "./utils";
+import { Config } from "./config";
 
 const dmailAddress = '0x0454f0bd015e730e5adbb4f080b075fdbf55654ff41ee336203aa2e1ac4d4309';
 
@@ -32,7 +33,9 @@ export class Dmail {
                 }),
             });
 
-            await sleep(60000 * 2); // 2 min to sync custom node
+            if (Config.nodeUrl) {
+                await sleep(60000 * 2); // 2 min to sync custom node
+            }
             
             const receipt = await this.provider.waitForTransaction(multiCall.transaction_hash);
 
